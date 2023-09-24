@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[415],{5415:function(e,a,n){n.r(a);var t,s=n(168),c=n(5867),i=n(184),l=c.ZP.div(t||(t=(0,s.Z)(["\n  font-size: 20px;\n  width: 100%;\n  padding: 40px 20px;\n"])));a.default=function(){return(0,i.jsxs)(l,{children:["Hello, my friend! ",(0,i.jsx)("br",{}),"This application will help you keep your contacts in a safe place and always have access to them. Use and enjoy! ;)"]})}}}]);
+//# sourceMappingURL=415.4cc2a413.chunk.js.map
