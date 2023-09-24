@@ -2,10 +2,9 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import * as formik from 'formik';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
-import { schema } from 'components/yupSchema';
+import * as yup from 'yup';
 
 export default function RegisterForm() {
   const dispatch = useDispatch();
@@ -16,6 +15,17 @@ export default function RegisterForm() {
     console.log(data);
     dispatch(register(data));
   };
+  const schema = yup.object().shape({
+    name: yup.string().required('This field is required'),
+    email: yup
+      .string()
+      .email('Email is not a valid')
+      .required('This field is required'),
+    password: yup
+      .string()
+      .min(7, 'The password must be longer then 7 symbols')
+      .required('This field is required'),
+  });
 
   return (
     <Formik
@@ -60,7 +70,7 @@ export default function RegisterForm() {
                 {errors.email}
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group as={Col} controlId="validationFormik02">
+            <Form.Group as={Col} controlId="validationFormik03">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
@@ -77,7 +87,7 @@ export default function RegisterForm() {
             </Form.Group>
           </Col>
 
-          <Button type="submit" className="btn-danger">
+          <Button type="submit" className="btn-danger" onClick={handleSubmit}>
             Register
           </Button>
         </Form>
