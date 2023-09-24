@@ -1,7 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
 import * as formik from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContactThunk } from 'redux/Contacts/thunk';
@@ -46,8 +45,8 @@ export function AddContactModal({ handleCloseModal }) {
           </Modal.Header>
           <Modal.Body>
             <Form noValidate onSubmit={handleSubmit}>
-              <Row className="mb-3">
-                <Form.Group as={Col} md="4" controlId="validationFormik01">
+              <Col className="mb-3">
+                <Form.Group as={Col} controlId="validationFormik01">
                   <Form.Label>Contact Name</Form.Label>
                   <Form.Control
                     type="text"
@@ -62,7 +61,7 @@ export function AddContactModal({ handleCloseModal }) {
                     {errors.name}
                   </Form.Control.Feedback>
                 </Form.Group>
-                <Form.Group as={Col} md="4" controlId="validationFormik02">
+                <Form.Group as={Col} controlId="validationFormik02">
                   <Form.Label>Number</Form.Label>
                   <Form.Control
                     type="text"
@@ -77,7 +76,7 @@ export function AddContactModal({ handleCloseModal }) {
                     {errors.number}
                   </Form.Control.Feedback>
                 </Form.Group>
-              </Row>
+              </Col>
               {/* <Button type="submit" className="btn-danger">
                   Add
                 </Button> */}
