@@ -3,16 +3,11 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import * as formik from 'formik';
-import { useDispatch, useSelector } from 'react-redux';
 import { editContactThunk } from 'redux/Contacts/thunk';
-import { contactsSelector } from 'redux/Contacts/selectors';
 import { schema } from 'components/yupSchema';
-import { useEffect } from 'react';
 import { Modal } from 'react-bootstrap';
 
 export function EditContactModal({ userToEdit, handleCloseModal }) {
-  const dispatch = useDispatch();
-
   const { Formik } = formik;
 
   const handleSubmit = ({ name, number }) => {
