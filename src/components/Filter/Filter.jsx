@@ -12,10 +12,10 @@ export const Filter = () => {
 
   return (
     <>
-      <label htmlFor="filter">Find contacts by name:</label>
       <FormControl
         type="text"
         name="filter"
+        placeholder="Find contacts by name"
         onChange={handleChange}
         value={filter}
       />

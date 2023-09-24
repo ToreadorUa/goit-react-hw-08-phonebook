@@ -6,9 +6,7 @@ import * as formik from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContactThunk } from 'redux/Contacts/thunk';
 import { contactsSelector } from 'redux/Contacts/selectors';
-import { nanoid } from 'nanoid';
 import { schema } from 'components/yupSchema';
-import { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 
 export function AddContactModal({ handleCloseModal }) {

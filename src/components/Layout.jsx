@@ -1,4 +1,3 @@
-// import Header from 'components/Header/Header';
 import { Suspense } from 'react';
 import { Rings } from 'react-loader-spinner';
 import { Outlet } from 'react-router-dom';

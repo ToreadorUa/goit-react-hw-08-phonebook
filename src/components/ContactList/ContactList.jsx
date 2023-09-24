@@ -1,18 +1,15 @@
 import { EditContactModal } from 'components/Form/EditContactModal';
 import { Loader } from 'components/Loader/Loader';
 import { useEffect, useState } from 'react';
-import { Button, Modal } from 'react-bootstrap';
+import { Button, ListGroupItem, Modal } from 'react-bootstrap';
 import { Rings } from 'react-loader-spinner';
 import { useDispatch, useSelector } from 'react-redux';
 import { contactsSelector } from 'redux/Contacts/selectors';
-import {
-  delContactThunk,
-  editContactThunk,
-  getContactsThunk,
-} from 'redux/Contacts/thunk';
+import { delContactThunk, getContactsThunk } from 'redux/Contacts/thunk';
 import { styled } from 'styled-components';
 import editImg from '../../images/edit.png';
 import deleteImg from '../../images/delete.png';
+import phone from '../../images/phone.png';
 
 export const ContactList = () => {
   const [isModalShow, setIsModalShow] = useState(false);
@@ -37,13 +34,6 @@ export const ContactList = () => {
     setUserToEdit(user);
     console.log(userToEdit);
     setIsModalShow(true);
-    // setEditUser(user);
-    // dispatch(editContactThunk(user));
-  };
-  const handleEdit = (id, name, number) => {
-    // const userEdited = { id, name, number };
-    console.log(id);
-    // dispatch(editContactThunk(userEdited));
   };
   const handleCloseModal = () => {
     setIsModalShow(false);
@@ -56,7 +46,6 @@ export const ContactList = () => {
           <Rings />
         </Loader>
       )}
-
       <Ul>
         {filterArray.map(({ name, number, id }, idx) => (
           <Li
@@ -64,11 +53,13 @@ export const ContactList = () => {
             key={id}
             id={id}
             style={{
-              backgroundColor: idx % 2 === 0 ? '#f0e5e5' : '#c6afaf',
+              backgroundColor: idx % 2 === 0 ? '#F8F9FA' : 'e7e7e6',
             }}
           >
+            <span style={{ width: '200px' }}>{name}:</span>
             <span>
-              {name}: {number}
+              <img src={phone} alt="phone" width="30" />
+              {number}
             </span>
             <div>
               <img
@@ -85,10 +76,6 @@ export const ContactList = () => {
                 style={{ cursor: 'pointer' }}
                 onClick={() => handleDelete(id)}
               />
-              {/* <Button onClick={() => handleEditOpen({ id, name, number })}>
-                Edit
-              </Button>
-              <Button onClick={() => handleDelete(id)}> Delete</Button> */}
             </div>
           </Li>
         ))}
@@ -104,15 +91,17 @@ export const ContactList = () => {
   );
 };
 
-const Li = styled.li`
+const Li = styled(ListGroupItem)`
   display: flex;
   justify-content: space-between;
   background: bisque;
   font-size: 18px;
+  letter-spacing: 0.5px;
   font-weight: 500;
 `;
 
 const Ul = styled.ul`
   list-style-type: none;
   margin-top: 20px;
+  padding-left: 0;
 `;

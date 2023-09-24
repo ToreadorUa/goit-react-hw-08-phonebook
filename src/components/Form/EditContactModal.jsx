@@ -4,13 +4,11 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import * as formik from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContactThunk, editContactThunk } from 'redux/Contacts/thunk';
+import { editContactThunk } from 'redux/Contacts/thunk';
 import { contactsSelector } from 'redux/Contacts/selectors';
-import { nanoid } from 'nanoid';
 import { schema } from 'components/yupSchema';
 import { useEffect, useState } from 'react';
 import { Modal } from 'react-bootstrap';
-import userEvent from '@testing-library/user-event';
 
 export function EditContactModal({ userToEdit, handleCloseModal }) {
   const dispatch = useDispatch();
@@ -28,7 +26,7 @@ export function EditContactModal({ userToEdit, handleCloseModal }) {
       number: number,
     };
     console.log(editedContact);
-      dispatch(editContactThunk(editedContact));
+    dispatch(editContactThunk(editedContact));
     handleCloseModal();
   };
   return (
@@ -85,7 +83,7 @@ export function EditContactModal({ userToEdit, handleCloseModal }) {
             <Button variant="secondary" onClick={handleCloseModal}>
               Cancel
             </Button>
-            <Button type="submit" variant="primary" onClick={handleSubmit}>
+            <Button type="submit" className="btn-danger" onClick={handleSubmit}>
               Save Changes
             </Button>
           </Modal.Footer>
