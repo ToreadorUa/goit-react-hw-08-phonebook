@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { login, logout, refresh, register } from './operations';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';

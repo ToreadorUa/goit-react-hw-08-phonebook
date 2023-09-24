@@ -7,14 +7,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { editContactThunk } from 'redux/Contacts/thunk';
 import { contactsSelector } from 'redux/Contacts/selectors';
 import { schema } from 'components/yupSchema';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Modal } from 'react-bootstrap';
 
 export function EditContactModal({ userToEdit, handleCloseModal }) {
   const dispatch = useDispatch();
-  const { contacts } = useSelector(contactsSelector);
-
-  useEffect(() => console.log(userToEdit), []);
 
   const { Formik } = formik;
 

@@ -1,5 +1,4 @@
 import { useAuth } from 'hooks/useAuth';
-import { Button } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { logout } from 'redux/auth/operations';
 import logoutImg from '../../images/logout.png';

@@ -1,7 +1,7 @@
 import { EditContactModal } from 'components/Form/EditContactModal';
 import { Loader } from 'components/Loader/Loader';
 import { useEffect, useState } from 'react';
-import { Button, ListGroupItem, Modal } from 'react-bootstrap';
+import { ListGroupItem } from 'react-bootstrap';
 import { Rings } from 'react-loader-spinner';
 import { useDispatch, useSelector } from 'react-redux';
 import { contactsSelector } from 'redux/Contacts/selectors';
