@@ -38,7 +38,7 @@ export default function RegisterForm() {
       }}
     >
       {({ handleSubmit, handleChange, values, touched, errors }) => (
-        <Form noValidate onSubmit={handleSubmit}>
+        <Form noValidate autoComplete="off" onSubmit={handleSubmit}>
           <Col className="mb-3">
             <Form.Group as={Col} controlId="validationFormik01">
               <Form.Label>Name</Form.Label>
