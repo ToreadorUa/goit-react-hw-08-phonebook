@@ -61,8 +61,8 @@ export const ContactList = () => {
               <img
                 src={phone}
                 alt="phone"
-                width="33"
-                style={{ verticalAlign: 'sub' }}
+                width="25"
+                style={{ verticalAlign: 'super' }}
               />
               - {number}
             </span>

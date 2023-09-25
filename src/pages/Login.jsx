@@ -23,7 +23,6 @@ export default function LoginForm() {
   });
 
   const handleSubmit = data => {
-    console.log(data);
     dispatch(login(data));
   };
 
