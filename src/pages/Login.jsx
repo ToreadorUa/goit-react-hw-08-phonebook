@@ -39,7 +39,7 @@ export default function LoginForm() {
       {({ handleSubmit, handleChange, values, touched, errors }) => (
         <Form noValidate onSubmit={handleSubmit}>
           <Row className="mb-3">
-            <Form.Group as={Col} controlId="validationFormik02">
+            <Form.Group as={Col} controlId="validationFormik01">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="text"

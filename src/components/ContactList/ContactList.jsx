@@ -58,21 +58,26 @@ export const ContactList = () => {
           >
             <span style={{ width: '200px' }}>{name}:</span>
             <span>
-              <img src={phone} alt="phone" width="30" />
-              {number}
+              <img
+                src={phone}
+                alt="phone"
+                width="33"
+                style={{ verticalAlign: 'sub' }}
+              />
+              - {number}
             </span>
             <div>
               <img
                 src={editImg}
                 alt="edit"
-                width="50"
+                width="45"
                 style={{ cursor: 'pointer' }}
                 onClick={() => handleEditOpen({ id, name, number })}
               />
               <img
                 src={deleteImg}
                 alt="delete"
-                width="50"
+                width="45"
                 style={{ cursor: 'pointer' }}
                 onClick={() => handleDelete(id)}
               />
